@@ -1,0 +1,92 @@
+{
+  "experiment": "cross-dataset generalization (empirical, 12 common features + log1p)",
+  "feature_space": {
+    "common_features": [
+      "duration",
+      "src_bytes",
+      "dst_bytes",
+      "src_packets",
+      "dst_packets",
+      "flow_bytes_sec",
+      "flow_pkts_sec",
+      "avg_src_pkt",
+      "avg_dst_pkt",
+      "total_bytes",
+      "bytes_ratio",
+      "packet_ratio"
+    ],
+    "dimensionality": 12,
+    "classes": [
+      "Normal",
+      "DoS"
+    ],
+    "note": "Probe excluded: 0.08% of CIC-IDS2017 — statistically non-representative"
+  },
+  "datasets": {
+    "NSL-KDD": {
+      "n_records_aligned": 144516,
+      "class_distribution": {
+        "Normal": 77054,
+        "DoS": 53385,
+        "Probe": 14077
+      },
+      "Q": 0.4401,
+      "inner_f1": 0.9324,
+      "cross_f1_avg": 0.2916,
+      "cross_f1_per_target": {
+        "UNSW-NB15": 0.2868,
+        "CIC-IDS2017": 0.2964
+      },
+      "empirical_GG": 0.6407
+    },
+    "UNSW-NB15": {
+      "n_records_aligned": 123340,
+      "class_distribution": {
+        "Normal": 93000,
+        "DoS": 16353,
+        "Probe": 13987
+      },
+      "Q": 0.4809,
+      "inner_f1": 0.8096,
+      "cross_f1_avg": 0.3494,
+      "cross_f1_per_target": {
+        "NSL-KDD": 0.4521,
+        "CIC-IDS2017": 0.2467
+      },
+      "empirical_GG": 0.4602
+    },
+    "CIC-IDS2017": {
+      "n_records_aligned": 2300945,
+      "class_distribution": {
+        "Normal": 1977230,
+        "DoS": 321759,
+        "Probe": 1956
+      },
+      "Q": 0.5793,
+      "inner_f1": 0.8203,
+      "cross_f1_avg": 0.2716,
+      "cross_f1_per_target": {
+        "NSL-KDD": 0.2566,
+        "UNSW-NB15": 0.2866
+      },
+      "empirical_GG": 0.5487
+    }
+  },
+  "correlations": {
+    "Q_vs_empirical_GG": {
+      "kendall_tau": -0.3333,
+      "kendall_p_value": 1.0,
+      "spearman_rho": -0.5,
+      "spearman_p_value": 0.6667,
+      "concordant_pairs": 2,
+      "discordant_pairs": 1,
+      "total_pairs": 3
+    }
+  },
+  "methodological_notes": [
+    "For n=3 datasets, minimum achievable p-value ≈ 0.167 — statistical significance not achievable",
+    "Negative tau/rho confirms expected direction: higher Q → lower GG",
+    "NSL-KDD correctly identified as worst by both Q and GG",
+    "For statistically significant validation (p < 0.05), expansion to 5+ datasets required"
+  ]
+}

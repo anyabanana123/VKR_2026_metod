@@ -1,0 +1,206 @@
+{
+  "report_title": "Комплексная оценка качества датасетов для NIDS",
+  "date": "2026-05-29T12:56:39",
+  "method_version": "1.0",
+  "weights": {
+    "T": 0.15,
+    "G": 0.15,
+    "S": 0.25,
+    "A": 0.25,
+    "N": 0.2
+  },
+  "datasets": {
+    "NSL-KDD": {
+      "raw_metrics": {
+        "dataset": "NSL-KDD",
+        "T_env_realism": 0.5,
+        "T_pcap_available": 0,
+        "T_labeling_quality": 0.5,
+        "T_network_completeness": 0.6,
+        "T_documentation": 0.5,
+        "T_train_test_split": 1,
+        "G_completeness": 1.0,
+        "G_correctness": 0.5,
+        "G_consistency": 0.828353022932592,
+        "G_currentness": 0.09473228540689989,
+        "A_acs": 0.3,
+        "S_imbalance_ratio": 38527.0,
+        "S_gini_index": 0.6325108969690418,
+        "S_duplicate_rate": 0.0041072739147707,
+        "S_missing_rate": 0.0,
+        "S_invalid_rate": 0.0,
+        "S_mean_mi": 0.49897227878154443,
+        "S_max_mi": 2.175097223337387,
+        "N_has_direct_ip": 1,
+        "N_anonymization_documented": 0,
+        "N_env_legal_status": 1,
+        "N_commercial_restrictions": 1
+      },
+      "block_scores": {
+        "T": 0.5167,
+        "G": 0.6058,
+        "S": 0.4386,
+        "A": 0.3,
+        "N": 0.75
+      },
+      "composite_score_Q": 0.4401,
+      "category": "Условно применим (задокументированные ограничения)",
+      "ml_cv_results": {
+        "RandomForest": {
+          "macro_f1": 0.9978,
+          "macro_recall": 0.9979
+        },
+        "XGBoost": {
+          "macro_f1": 0.9976,
+          "macro_recall": 0.998
+        },
+        "LogisticRegression": {
+          "macro_f1": 0.979,
+          "macro_recall": 0.9773
+        },
+        "MLP": {
+          "macro_f1": 0.9952,
+          "macro_recall": 0.9956
+        }
+      },
+      "ml_average": {
+        "macro_f1": 0.9924,
+        "macro_recall": 0.9922
+      },
+      "empirical_GG": 0.6407
+    },
+    "UNSW-NB15": {
+      "raw_metrics": {
+        "dataset": "UNSW-NB15",
+        "T_env_realism": 0.5,
+        "T_pcap_available": 1,
+        "T_labeling_quality": 0.5,
+        "T_network_completeness": 0.7,
+        "T_documentation": 0.5,
+        "T_train_test_split": 1,
+        "G_completeness": 0.6428571428571429,
+        "G_correctness": 0.5,
+        "G_consistency": 0.6280798379920838,
+        "G_currentness": 0.217637640824031,
+        "A_acs": 0.5,
+        "S_imbalance_ratio": 534.4827586206897,
+        "S_gini_index": 0.7716241599175442,
+        "S_duplicate_rate": 0.43640971308596554,
+        "S_missing_rate": 0.0,
+        "S_invalid_rate": 0.0,
+        "S_mean_mi": 0.32128498212798035,
+        "S_max_mi": 1.1708428188734694,
+        "N_has_direct_ip": 1,
+        "N_anonymization_documented": 0,
+        "N_env_legal_status": 1,
+        "N_commercial_restrictions": 1
+      },
+      "block_scores": {
+        "T": 0.7,
+        "G": 0.4971,
+        "S": 0.3197,
+        "A": 0.5,
+        "N": 0.75
+      },
+      "composite_score_Q": 0.4809,
+      "category": "Условно применим (задокументированные ограничения)",
+      "ml_cv_results": {
+        "RandomForest": {
+          "macro_f1": 0.9319,
+          "macro_recall": 0.9254
+        },
+        "XGBoost": {
+          "macro_f1": 0.9291,
+          "macro_recall": 0.9206
+        },
+        "LogisticRegression": {
+          "macro_f1": 0.839,
+          "macro_recall": 0.8214
+        },
+        "MLP": {
+          "macro_f1": 0.9231,
+          "macro_recall": 0.9163
+        }
+      },
+      "ml_average": {
+        "macro_f1": 0.9058,
+        "macro_recall": 0.8959
+      },
+      "empirical_GG": 0.4602
+    },
+    "CIC-IDS2017": {
+      "raw_metrics": {
+        "dataset": "CIC-IDS2017",
+        "T_env_realism": 1,
+        "T_pcap_available": 1,
+        "T_labeling_quality": 0.5,
+        "T_network_completeness": 0.8,
+        "T_documentation": 0.5,
+        "T_train_test_split": 0,
+        "G_completeness": 0.8,
+        "G_correctness": 0.5,
+        "G_consistency": 0.9957085449996209,
+        "G_currentness": 0.2871745887492587,
+        "A_acs": 0.65,
+        "S_imbalance_ratio": 179756.18181818182,
+        "S_gini_index": 0.2610244141920147,
+        "S_duplicate_rate": 0.03544111227801764,
+        "S_missing_rate": 0.0,
+        "S_invalid_rate": 0.0,
+        "S_mean_mi": 0.9199796520031724,
+        "S_max_mi": 1.7788610691726494,
+        "N_has_direct_ip": 0.5,
+        "N_anonymization_documented": 0,
+        "N_env_legal_status": 0.5,
+        "N_commercial_restrictions": 1
+      },
+      "block_scores": {
+        "T": 0.6333,
+        "G": 0.6457,
+        "S": 0.4997,
+        "A": 0.65,
+        "N": 0.5
+      },
+      "composite_score_Q": 0.5793,
+      "category": "Условно применим (задокументированные ограничения)",
+      "ml_cv_results": {
+        "RandomForest": {
+          "macro_f1": 0.993,
+          "macro_recall": 0.988
+        },
+        "XGBoost": {
+          "macro_f1": 0.993,
+          "macro_recall": 0.988
+        },
+        "LogisticRegression": {
+          "macro_f1": 0.982,
+          "macro_recall": 0.972
+        },
+        "MLP": {
+          "macro_f1": 0.99,
+          "macro_recall": 0.982
+        }
+      },
+      "ml_average": {
+        "macro_f1": 0.9895,
+        "macro_recall": 0.9825
+      },
+      "empirical_GG": 0.5487
+    }
+  },
+  "validation": {
+    "GG_source": "empirical cross-dataset experiment (12 common features, Normal+DoS)",
+    "GG_values": {
+      "NSL-KDD": 0.6407,
+      "UNSW-NB15": 0.4602,
+      "CIC-IDS2017": 0.5487
+    },
+    "kendall_tau": -0.3333,
+    "spearman_rho": -0.5,
+    "p_value_kendall": 1.0,
+    "p_value_spearman": 0.6667,
+    "concordant_pairs": 2,
+    "discordant_pairs": 1,
+    "conclusion": "Метод корректно ранжирует крайний случай (NSL-KDD: min Q, max GG). Из трёх пар две согласованы (τ = -0.333). Для статистически значимой верификации требуется расширение до 5+ датасетов."
+  }
+}
